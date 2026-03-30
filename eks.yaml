@@ -1,12 +1,16 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
-
 metadata:
   name: expense
   region: us-east-1
 
+availabilityZones: ["us-east-1a", "us-east-1b", "us-east-1c"]
+
 managedNodeGroups:
   - name: expense
-    instanceType: ["m5.large", "c3.large","c4.large","c5.large"]
+    instanceTypes: ["m5.large", "c4.large", "c5.large"]
     desiredCapacity: 3
+    minSize: 2
+    maxSize: 5
     spot: true
+    availabilityZones: ["us-east-1a", "us-east-1b", "us-east-1c"]
