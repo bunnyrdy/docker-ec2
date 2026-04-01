@@ -5,24 +5,13 @@ metadata:
   name: expense
   region: us-east-1
 
-availabilityZones:
-  - us-east-1a
-  - us-east-1b
-  - us-east-1c
-
 managedNodeGroups:
   - name: expense
     instanceTypes:
       - t3.medium
-      - t3a.medium
-      - t2.medium
-    desiredCapacity: 2  # Start with 2 instead of 3
+      - t3.large
+      - m5.large
+    desiredCapacity: 1
     minSize: 1
-    maxSize: 4
+    maxSize: 2
     spot: true
-    taints:
-      - key: spot
-        value: "true"
-        effect: NoSchedule
-    labels:
-      lifecycle: spot
