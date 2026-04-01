@@ -9,10 +9,6 @@ managedNodeGroups:
   - name: expense
     instanceTypes:
       - t3.medium
-      - t3.large
-      - m5.large
-      - m5a.large
-    desiredCapacity: 3
+    desiredCapacity: 2
     minSize: 1
-    maxSize: 3
-    spot: true
+    maxSize: 2
