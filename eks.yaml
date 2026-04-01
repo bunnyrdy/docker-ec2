@@ -3,12 +3,26 @@ kind: ClusterConfig
 
 metadata:
   name: expense
-  region: us-east-1   # you can keep this if required
+  region: us-east-1
+
+availabilityZones:
+  - us-east-1a
+  - us-east-1b
+  - us-east-1c
 
 managedNodeGroups:
   - name: expense
     instanceTypes:
       - t3.medium
-    desiredCapacity: 2
+      - t3a.medium
+      - t2.medium
+    desiredCapacity: 2  # Start with 2 instead of 3
     minSize: 1
-    maxSize: 2
+    maxSize: 4
+    spot: true
+    taints:
+      - key: spot
+        value: "true"
+        effect: NoSchedule
+    labels:
+      lifecycle: spot
