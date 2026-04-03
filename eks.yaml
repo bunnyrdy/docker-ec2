@@ -8,10 +8,8 @@ metadata:
 managedNodeGroups:
   - name: expense
     instanceTypes:      
-      - t3.medium
-      - t3.large
-      - m5.large
-      - m5a.large
+      - t3.small
+      - t3a.small
     desiredCapacity: 1
     minSize: 1
     maxSize: 2
