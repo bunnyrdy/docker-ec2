@@ -10,7 +10,7 @@ managedNodeGroups:
     instanceTypes:      
       - t3.small
       - t3a.small
-    desiredCapacity: 1
+    desiredCapacity: 3
     minSize: 1
-    maxSize: 2
+    maxSize: 3
     spot: true
